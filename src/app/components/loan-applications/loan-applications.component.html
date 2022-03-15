@@ -1,0 +1,34 @@
+<h4>Details of Companies applied for loan-</h4> 
+<nav class="navbar"> 
+     <input class="form-control" type="text" name="companyId"
+      [(ngModel)]="companyId" (ngModelChange)="Search()"
+      placeholder="Search here with company-id">
+</nav>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Company_Id</th>
+        <th scope="col">Comapny_Name</th>
+        <th scope="col" (click)="sort('creditvalue')">Credit_value&nbsp;<i class="fa fa sort"></i></th>
+        <th scope="col">Company_value</th>
+        <th scope="col">Annual_turnover</th>
+        <th scope="col">Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let company of Company|orderBy:key:reverse |paginate:{itemsPerPage:5,currentPage:p};"> 
+        <td>{{company.companyId}}</td>
+        <td>{{company.companyName}}</td>
+        <td>{{company.creditvalue}}</td>
+        <td>{{company.companyvalue}}</td>
+        <td>{{company.turnover}}</td>
+        <td>{{company.loan_amount}}</td>
+      </tr>
+    </tbody>
+    <tr>
+      <td>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+      </td>
+      </tr>
+  </table>
+

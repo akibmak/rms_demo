@@ -1,0 +1,28 @@
+<h4>Details of Policies--</h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Policy_Id</th>
+            <th>MAX_loan_amount</th>
+            <th>MIN_loan_amount</th>
+            <th>Creditvalue</th>
+            <th>companyvalue</th>
+            <th>Turnover</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor=" let policy of policies|paginate:{itemsPerPage:5,currentPage:p};">
+            <td>{{policy.pid}}</td>
+            <td>{{policy.max_loan_amount}}</td>
+            <td>{{policy.min_loan_amount}}</td>
+            <td>{{policy.creditvalue}}</td>
+            <td>{{policy.companyvalue}}</td>
+            <td>{{policy.turnover}}</td>
+            <td> <button (click)="setID(policy)" class="btn  btn-secondary fw-bold border-white">Remove</button>
+             <button (click)="setUpdateID(policy)"class="btn  btn-secondary fw-bold border-white">Update</button></td>
+        </tr>
+    </tbody>
+
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+</table>

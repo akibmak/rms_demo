@@ -1,0 +1,76 @@
+
+  <div class="class1">
+    <div class="container">
+      <div class="title">
+        Enter Policy details-
+      </div>
+      <form (ngSubmit)="onSubmit()" ngNativeValidate [formGroup]="userForm">
+        <div class="user-details">
+          <div class="input-box" class="form-group">
+            <span class="details">Policy Id
+            </span>
+            <input class="form-control" formControlName="pid" [(ngModel)]="policy.pid" type="text" placeholder="Enter analyst id..." name="pid"
+              [ngClass]="{'is-invalid': submitted && userForm.get('pid')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('pid')?.invalid">
+              <div *ngIf="userForm.get('pid')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('pid')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">MAX_loan_amount
+            </span>
+            <input class="form-control" formControlName="max_loan_amount"  [(ngModel)]="policy.max_loan_amount" type="text" placeholder="Enter analyst id..." name="max_loan_amount"
+              [ngClass]="{'is-invalid': submitted && userForm.get('max_loan_amount')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('max_loan_amount')?.invalid">
+              <div *ngIf="userForm.get('max_loan_amount')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('max_loan_amount')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">MIN_loan_amount</span>
+            <input class="form-control" formControlName="min_loan_amount"  [(ngModel)]="policy.min_loan_amount" type="text" placeholder="Enter user name..." name="min_loan_amount"
+              [ngClass]="{'is-invalid': submitted && userForm.get('min_loan_amount')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('min_loan_amount')?.invalid">
+              <div *ngIf="userForm.get('min_loan_amount')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('min_loan_amount')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box " class="form-group">
+            <span class="details" for="creditvalue">creditvalue</span>
+            <input class="form-control" formControlName="creditvalue"  [(ngModel)]="policy.creditvalue"type="text" placeholder="Enter email..." name="creditvalue"
+              [ngClass]="{'is-invalid': submitted && userForm.get('creditvalue')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('creditvalue')?.invalid">
+              <div *ngIf="userForm.get('creditvalue')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('creditvalue')?.errors?.pattern">* Enter in format</div>
+            </div>
+          </div>
+        <div class="input-box" class="form-group">
+            <span class="details">companyvalue</span>
+            <input class="form-control" formControlName="companyvalue"  [(ngModel)]="policy.companyvalue" type="text" placeholder=" Enter contact no...."
+                name="companyvalue" [ngClass]="{'is-invalid': submitted && userForm.get('companyvalue')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('companyvalue')?.invalid">
+                <div *ngIf="userForm.get('companyvalue')?.errors?.required">* Required</div>
+                <div *ngIf="userForm.get('companyvalue')?.errors?.minLength">* 1 digits</div>
+                <div *ngIf="userForm.get('companyvalue')?.errors?.maxLength">* 10 digits</div>
+                <div *ngIf="userForm.get('companyvalue')?.errors?.pattern">* Enter in format</div>
+            </div>
+        </div>
+        <div class="input-box" class="form-group">
+            <span class="details">Turnover</span>
+            <input class="form-control" formControlName="turnover"  [(ngModel)]="policy.turnover" type="text" placeholder="Turnover"
+                name="turnover"
+                [ngClass]="{'is-invalid': submitted && userForm.get('turnover')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('turnover')?.invalid">
+                <div *ngIf="userForm.get('turnover')?.errors?.required">* Required</div>
+                <div *ngIf="userForm.get('turnover')?.errors?.minLength">* Min 5 characters</div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Add Policy">
+        </div>
+       
+      </form>
+    </div>
+  </div>
+

@@ -1,0 +1,32 @@
+<h4>Details of Analysts-</h4> 
+<nav class="navbar"> 
+     <input class="form-control" type="text" name="Id"
+      [(ngModel)]="Id" (ngModelChange)="Search()"
+      placeholder="Search here with analyst-id">
+</nav>
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Analyst_Id</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Password</th>
+        <th scope="col">Email</th>
+        <th scope="col">phone</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let analyst of analyst|paginate:{itemsPerPage:5,currentPage:p};"> 
+        <td>{{analyst.id}}</td>
+        <td>{{analyst.userName}}</td>
+        <td>{{analyst.password}}</td>
+        <td>{{analyst.email}}</td>
+        <td>{{analyst.phone}}</td>
+        <td> <button  (click)="setID(analyst)"class="btn  btn-secondary fw-bold border-white">Remove</button></td>
+      </tr> 
+    </tbody>
+    
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+  </table>
+
+

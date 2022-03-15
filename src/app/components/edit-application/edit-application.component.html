@@ -1,0 +1,71 @@
+<div class="boxsize">
+    <div class="d-flex flex-column" id="content-wrapper" id="main-outlet">
+      <div id="content">
+        <div class="container-fluid">
+          <div class="card shadow">
+            <div class="card-header py-3">
+              <p class="text-primary m-0 font-weight-bold">
+                Company Details-
+              </p>
+            </div>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 text-nowrap">
+                  <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"></div>
+                </div>
+                <div class="col-md-6">
+                  <div class="text-md-right dataTables_filter" id="dataTable_filter"></div>
+                </div>
+              </div>
+              <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+                <table class="table table-user-information table-hover table-borderless">
+                  <tbody>
+                    <tr>
+                      <td class="title">Company-Id</td>
+                      <td class="userdata">{{ company.companyId }}
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="title">Company-Name</td>
+                      <td class="userdata">{{company.companyName  }}</td>
+                    </tr>
+                    <tr>
+                      <td class="title">Company_value</td>
+                      <td class="userdata"> {{ company.companyvalue}}</td>
+                    </tr>
+                    <tr>
+                      <td class="title">Company-Turnover</td>
+                      <td class="userdata"> {{ company.turnover}}</td>
+                    </tr>
+                    <tr>
+                      <td class="title">Company-Creditvalue</td>
+                      <td class="userdata"> {{ company.creditvalue}}
+                      </td>
+                    </tr>
+                    <tr>
+                        <td class="title">Loan-Amount</td>
+                        <td class="userdata"> {{company.loan_amount}}
+                        </td>
+                   </tr>
+                   <tr>
+                    <td class="title">User Email-Id</td>
+                    <td class="userdata"> {{company.emailId }}
+                    </td>
+                  </tr>
+                  </tbody>
+                  <button class="btn btn-lg btn-secondary fw-bold border-white" (click)="acceptApplication()">Accept</button>
+                 <span></span>
+                 <button class="btn btn-lg btn-secondary fw-bold border-white"(click)=" deleteApplication()">Reject</button>
+                <button class="btn btn-lg btn-secondary fw-bold border-white"(click)="report()">Report</button>
+                <ng-container *ngIf="show">
+                          <textarea rows="5" cols="50" [(ngModel)]="reportDesc" name="reportDesc" placeholder="Enter the discription here......."></textarea>
+                          <button  (click)="submitReport()"class="btn btn-sm btn-secondary fw-bold border-white">submit</button> 
+              </ng-container>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    

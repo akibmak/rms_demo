@@ -1,0 +1,78 @@
+
+<div id="wrapper">
+    <nav
+      class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0"
+    >
+      <div class="container-fluid d-flex flex-column p-0">
+        <a
+          id="logo"
+          class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+          [routerLink]="['/dashboard']"
+        >
+          <div class="sidebar-brand-icon rotate-n-15">
+            <i class="fa fa-shield"></i>
+          </div>
+          <div class="sidebar-brand-text mx-3"><span>Risk Analytics Platform</span></div>
+        </a>
+        <hr class="nav-hr" />
+        <a
+          id="role"
+          class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0"
+          [routerLink]="['/admin-dashboard']"
+        >
+          <div class="sidebar-brand-icon rotate-n-15"></div>
+          <div class="sidebar-brand-text mx-3">Hi,{{admin.userName}}</div>
+        </a>
+        <hr class="nav-hr" />
+        <ul class="nav navbar-nav text-light" id="accordionSidebar">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard"  routerLinkActive="active-link">
+              <i  class=" fas fa fa-desktop"></i><span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/loan-applications"  routerLinkActive="active-link">
+              <i  class="fas fa-clipboard-list"></i><span>Loan Applications</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/history"  routerLinkActive="active-link">
+              <i  class="fas fa fa-history"></i><span>Applications history</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/analyst-profiles"  routerLinkActive="active-link">
+              <i class="fas fa-user"></i><span>Analyst-Profiles</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/add-analyst"  routerLinkActive="active-link">
+              <i class="fas fa fa-plus" ></i><span>Add-Analyst</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/add-policy"  routerLinkActive="active-link">
+              <i  class="fas fa fa-plus" ></i><span>Add Policies</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/admin-dashboard/edit-policies"  routerLinkActive="active-link">
+              <i  class="fas fa fa-pencil" ></i><span>Edit Policies</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/logout" style="cursor: pointer">
+              <i class="fas fa-sign-out-alt"> </i><span>Sign Out</span>
+            </a>
+          </li>
+        </ul>
+        <div class="text-center d-none d-md-inline">
+          <button
+            class="btn rounded-circle border-0"
+            id="sidebarToggle"
+            type="button"
+          ></button>
+        </div>
+      </div>
+    </nav>
+  </div>

@@ -1,0 +1,14 @@
+.main1{
+    background-image: url("src/assets/img/bgimage2.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+h1{
+    text-align: center; 
+    margin-top: 40px; 
+    margin-left: 50px;
+    color: white;
+    padding-top: 20px;
+}

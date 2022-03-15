@@ -1,0 +1,47 @@
+.table{
+    width:auto;
+    height:auto ;
+    margin: 20px 0px 20px 300px;
+    background-color: white;
+    border: 2px solid #6c6c6e;
+    padding-left: 1px;
+}
+td{
+  padding-right: 5px;
+}
+h4{
+    text-align: center;
+    margin-top: 20px; 
+    color: white;
+}
+.navbar{
+  margin-left: 350px;
+  width: 50%;  
+}
+
+.btn{
+  background-color:#180844;
+  font-size: 12px;
+  padding: 3px 4px;
+  margin-right: 3px;
+}
+.button-add{
+  background-color:#180844;
+  margin-top: 1px;
+  margin-left: 300px;
+  margin-right: 10px;
+  color: white;
+  font-size: 20px;
+  padding: 5px 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.button-update{
+  background-color:#180844;
+  margin-top: 1px;
+  font-size: 20px;
+  color: white;
+  padding: 5px 5px;
+  font-weight: bold;
+  border-radius: 5px;
+}

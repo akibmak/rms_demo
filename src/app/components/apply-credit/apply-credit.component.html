@@ -1,0 +1,78 @@
+
+  <div class="class1">
+    <div class="container">
+      <div class="title">
+        Enter details
+      </div>
+      <form (ngSubmit)="onSubmit()" ngNativeValidate [formGroup]="userForm">
+        <div class="user-details">
+          <div class="input-box" class="form-group">
+            <span class="details">Company-Id </span>
+            <input class="form-control" formControlName="companyId" type="text" placeholder="Enter company id..." name="companyId"
+              [ngClass]="{'is-invalid': submitted && userForm.get('companyId')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('companyId')?.invalid">
+              <div *ngIf="userForm.get('companyId')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('companyId')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">Company-name</span>
+            <input class="form-control" formControlName="companyName" type="text" placeholder="Enter company name..." name="companyName"
+              [ngClass]="{'is-invalid': submitted && userForm.get('companyName')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('companyName')?.invalid">
+              <div *ngIf="userForm.get('companyName')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('companyName')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">CompanyValue</span>
+            <input class="form-control" formControlName="companyvalue" type="text" placeholder="Enter company value..." name="companyvalue"
+              [ngClass]="{'is-invalid': submitted && userForm.get('companyvalue')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('companyvalue')?.invalid">
+              <div *ngIf="userForm.get('companyvalue')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('companyvalue')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">CreditValue</span>
+            <input class="form-control" formControlName="creditvalue" type="text" placeholder="Enter creditvalue..." name="creditvalue"
+              [ngClass]="{'is-invalid': submitted && userForm.get('creditvalue')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('creditvalue')?.invalid">
+              <div *ngIf="userForm.get('creditvalue')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('creditvalue')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">Loan-Amount</span>
+            <input class="form-control" formControlName="loan_amount" type="text" placeholder="Enter loan amount..." name="loan_amount"
+              [ngClass]="{'is-invalid': submitted && userForm.get('loan_amount')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('loan_amount')?.invalid">
+              <div *ngIf="userForm.get('loan_amount')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('loan_amount')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+          </div>
+          <div class="input-box" class="form-group">
+            <span class="details">AnnualTurnover</span>
+            <input class="form-control" formControlName="turnover" type="text" placeholder="Enter turnover..."
+                name="turnover" [ngClass]="{'is-invalid': submitted && userForm.get('turnover')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('turnover')?.invalid">
+                <div *ngIf="userForm.get('turnover')?.errors?.required">* Required</div>
+                <div *ngIf="userForm.get('turnover')?.errors?.minLength">* Min 3 characters</div>
+            </div>
+        </div>
+          <div class="input-box " class="form-group">
+            <span class="details" for="email"> Email-Id </span>
+            <input class="form-control" formControlName="emailId" type="text" placeholder="Enter email..." name="emailId"
+              [ngClass]="{'is-invalid': submitted && userForm.get('emailId')?.invalid}" />
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('emailId')?.invalid">
+              <div *ngIf="userForm.get('emailId')?.errors?.required">* Required</div>
+              <div *ngIf="userForm.get('emailId')?.errors?.pattern">* Enter in format</div>
+            </div>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" value="Apply">
+        </div>
+      </form>
+    </div>
+  </div>

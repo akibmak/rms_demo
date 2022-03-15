@@ -1,0 +1,30 @@
+<h4>Applications status History-</h4> 
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th >Company_Id</th>
+        <th>Company_Name</th>
+        <th>Email-Id</th>
+        <th  (click)="sort('creditvalue')">Credit_value&nbsp;<i class="fa fa sort"></i></th>
+        <th >Company_value</th>
+        <th >Annual_turnover</th>
+        <th >Amount</th>
+        <th >Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let application of applicationstatus |orderBy:key:reverse|paginate:{itemsPerPage:5,currentPage:p};"> 
+        <td>{{application.companyId}}</td>
+        <td>{{application.companyName}}</td>
+        <td>{{application.emailId}}</td>
+        <td>{{application.creditvalue}}</td>
+        <td>{{application.companyvalue}}</td>
+        <td>{{application.turnover}}</td>
+        <td>{{application.loan_amount}}</td>
+        <td>{{application.status}}</td>
+      </tr>
+    </tbody>
+    <pagination-controls (pageChange)="p =$event"></pagination-controls>
+   
+  </table>
+

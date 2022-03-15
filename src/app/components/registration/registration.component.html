@@ -1,0 +1,157 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div class="class1">
+        <div class="container">
+            <div class="title">
+                Sign Up
+            </div>
+            <form (ngSubmit)="onSubmit()" ngNativeValidate [formGroup]="userForm">
+                <div class="user-details">
+                    <div class="input-box" class="form-group">
+                        <span class="details"> User-Name </span>
+                        <input class="form-control" formControlName="username" type="text" placeholder="UserName"
+                            name="username" [ngClass]="{'is-invalid': submitted && userForm.get('name')?.invalid}" />
+                        <div class="invalid-feedback" *ngIf="submitted && userForm.get('name')?.invalid">
+                            <div *ngIf="userForm.get('username')?.errors?.required">* Required</div>
+                            <div *ngIf="userForm.get('username')?.errors?.minLength">* Min 3 characters</div>
+                        </div>
+                    </div>
+                    <div class="input-box " class="form-group">
+                        <span class="details" for="email"> Email-Id </span>
+                        <input class="form-control" formControlName="email" type="text" placeholder="email Id"
+                            name="email" [ngClass]="{'is-invalid': submitted && userForm.get('email')?.invalid}" />
+                        <div class="invalid-feedback" *ngIf="submitted && userForm.get('email')?.invalid">
+                            <div *ngIf="userForm.get('email')?.errors?.required">* Required</div>
+                            <div *ngIf="userForm.get('email')?.errors?.pattern">* Enter in format</div>
+                        </div>
+                    </div>
+                    <div class="input-box" class="form-group">
+                        <span class="details">Contact</span>
+                        <input class="form-control" formControlName="phone" type="text" placeholder="contact no"
+                            name="Phone" [ngClass]="{'is-invalid': submitted && userForm.get('phone')?.invalid}" />
+                        <div class="invalid-feedback" *ngIf="submitted && userForm.get('phone')?.invalid">
+                            <div *ngIf="userForm.get('phone')?.errors?.required">* Required</div>
+                            <div *ngIf="userForm.get('phone')?.errors?.minLength">* 10 digits</div>
+                            <div *ngIf="userForm.get('phone')?.errors?.maxLength">* 10 digits</div>
+                            <div *ngIf="userForm.get('phone')?.errors?.pattern">* Enter in format</div>
+                        </div>
+                    </div>
+
+                   
+                    <div class="input-box" class="form-group">
+                        <span class="details"> Password </span>
+                        <input class="form-control" formControlName="password" type="password" placeholder="password"
+                            name="password"
+                            [ngClass]="{'is-invalid': submitted && userForm.get('password')?.invalid}" />
+                        <div class="invalid-feedback" *ngIf="submitted && userForm.get('password')?.invalid">
+                            <div *ngIf="userForm.get('password')?.errors?.required">* Required</div>
+                            <div *ngIf="userForm.get('password')?.errors?.minLength">* Min 5 characters</div>
+                        </div>
+                    </div>
+                    <div class="input-box" class="form-group">
+                        <span class="details"> Confirm Password </span>
+                        <input type="password" class="form-control" placeholder="Re-enter Password" name="confirmPassword"
+                            formControlName="confirmPassword"
+                            [ngClass]="{'is-invalid': submitted && userForm.get('confirmPassword')?.invalid}" />
+                        <div class="invalid-feedback" *ngIf="submitted && userForm.get('confirmPassword')?.invalid">
+                            <div *ngIf="userForm.get('confirmPassword')?.errors?.required">* Required</div>
+                            <div *ngIf="userForm.get('confirmPassword')?.errors?.matching">Password not same</div>
+                        </div>
+                    </div>
+
+
+                    <!--       <div class="input-box" class="form-group">
+                <span class="details"> Security Que. </span>
+                <select class="form-select" aria-label="Default select example" 
+                    #myselect  
+                    name = "securityQue"
+                    formControlName="securityQue"
+                    [ngClass]="{'is-invalid': submitted && userForm.get('securityQue')?.invalid}"
+                    >
+
+
+                  <option value="What is your pet-name ?">What is your pet-name ?</option>
+                  <option value="Who is your favourite cricketer ?">Who is your favourite cricketer ?</option>
+                  <option value="What is your birth place ?">What is your birth place ?</option>
+
+                </select>
+
+                <div class="invalid-feedback" *ngIf="submitted && userForm.get('securityQue')?.invalid">
+                    <div *ngIf="userForm.get('securityQue')?.errors?.required">* Required</div>
+                </div> 
+
+                </div>
+               
+            <div>
+            Answer <input type="text" name="answer"  formControlName="answer" class="form-control form-control-user"
+            
+            [ngClass]="{'is-invalid': submitted && userForm.get('answer')?.invalid}"
+            >
+
+            <div class="invalid-feedback" *ngIf="submitted && userForm.get('answer')?.invalid">
+                <div *ngIf="userForm.get('answer')?.errors?.required">* Required</div>
+            </div>
+         
+          </div>
+
+        -->
+
+                </div>
+
+                <div class="class4">
+
+                    <label for="role" style="font-weight: 500;">Select Role - </label>
+                    <input type="radio" name="role" value="credit Borrower" formControlName="role" checked class="class4">Credit Borrower
+                    <input type="radio" name="role" value="Financial analyst" formControlName="role" [ngClass]="{'is-invalid': submitted && userForm.get('role')?.invalid}" class="class4">Financia Analyst
+                    <div class="invalid-feedback" *ngIf="submitted && userForm.get('role')?.invalid">
+                        <div *ngIf="userForm.get('role')?.errors?.required">* Required</div>
+                    </div>
+                </div>
+
+                <div class="button">
+                    <input type="submit" value="Sign Up">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+<!--
+<h1>{{ title }}</h1>
+
+<form [formGroup] = "loginForm" (ngSubmit)="loginUser()">
+
+    <input type="text" placeholder="enter name" formControlName="email" >
+
+    <br>
+
+    <span *ngIf="user && user.touched" >username can't be empty</span>
+    
+    
+    <span *ngIf="user && user.invalid" >username is not valid</span>
+    
+    <br>
+
+    <input type="password" placeholder="enter password" formControlName="password" >
+
+    <br>
+    
+    <span *ngIf="password && password.invalid && password.touched" >Password is not valid</span>
+    
+
+    <br>
+
+    <button [disabled]="loginForm.invalid">login</button>
+
+
+</form>  
+
+-->

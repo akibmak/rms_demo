@@ -1,0 +1,52 @@
+<div>
+  <div class="d-flex flex-column" id="content-wrapper" id="main-outlet">
+    <div id="content">
+      <div class="container-fluid">
+
+        <div class="card shadow">
+          <div class="card-header py-3">
+            <p class="text-primary m-0 font-weight-bold">
+              {{user.userName}}
+            </p>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-md-6 text-nowrap">
+                <div id="dataTable_length" class="dataTables_length" aria-controls="dataTable"></div>
+              </div>
+              <div class="col-md-6">
+                <div class="text-md-right dataTables_filter" id="dataTable_filter"></div>
+              </div>
+            </div>
+            <div class="table-responsive table mt-2" id="dataTable" role="grid" aria-describedby="dataTable_info">
+              <table class="table table-user-information table-hover table-borderless">
+                <tbody>
+                  <tr>
+                    <td class="title"> User-Id</td>
+                    <td class="userdata">{{ user.id }}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="title">Username</td>
+                    <td class="userdata">{{user.userName }}</td>
+                  </tr>
+                  <tr>
+                    <td class="title"> Phone</td>
+                    <td class="userdata"> {{ user.phone }}</td>
+                  </tr>
+                  <tr>
+                    <td class="title"> Email</td>
+                    <td class="userdata"> {{ user.email }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

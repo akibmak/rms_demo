@@ -1,0 +1,7 @@
+.main1{
+    background-image: url("src/assets/img/bgimage2.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}

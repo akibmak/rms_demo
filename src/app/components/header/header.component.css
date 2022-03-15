@@ -1,0 +1,19 @@
+.navbar{
+
+    background-color:#180844
+}
+.btn{
+    background-color:#180844
+}
+.toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color:#180844;
+    color: white;
+    font-weight: 600;
+  }

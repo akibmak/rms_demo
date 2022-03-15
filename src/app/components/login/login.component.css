@@ -1,0 +1,13 @@
+.bgimage{
+    background-image: url("src/assets/img/bgimage2.png");
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+.card{
+    top: 100px;
+    margin-left: 50px;
+    width: 100%;
+    box-shadow:5px  darkgrey;
+}

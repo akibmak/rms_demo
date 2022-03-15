@@ -1,0 +1,13 @@
+.btn{
+    background-color:#180844;
+    margin-top: 12px;
+    margin-right: 12px;
+}
+.boxsize{
+    margin-left: 200px;
+    width: 70%;
+}
+textarea{
+    margin-top: 10px;
+    display: inline-block;
+}

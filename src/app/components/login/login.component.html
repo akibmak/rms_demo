@@ -1,0 +1,39 @@
+<app-header></app-header>
+<div class="bgimage">   
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-5">
+      <div class="card shadow-lg o-hidden border-0">
+        <div class="card-body p-0">
+          <div>
+            <div>
+              <div class="p-5">
+                <div class="text-center">
+                  <h1>Welcome Back!</h1>
+                </div>
+                <form class="user" >
+                <div class="form-group">
+                  <div>
+                    User Name <input type="text" name="userName" [(ngModel)]="userName" class="form-control form-control-user">
+                    </div>
+                    <div>
+                    Password <input type="password" name="password" [(ngModel)]="password" class="form-control form-control-user">
+                  </div>
+                  <a href="forgetPassword" routerLinkActive="active" class="nav-link" style="justify-content: center;">Forget Password?</a>
+                  <p></p>
+                  <button (click)="checkLogin();submitButton.disabled=true"  class="btn btn-primary btn-block text-white btn-user"#submitButton >
+                    Login
+                  </button>
+                </div>
+             </form>
+             
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<app-footer></app-footer>

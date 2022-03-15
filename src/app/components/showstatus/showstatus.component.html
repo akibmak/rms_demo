@@ -1,0 +1,25 @@
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th >Company_Id</th>
+        <th >Comapny_Name</th>
+        <th >Credit_value</th>
+        <th >Company_value</th>
+        <th >Annual_turnover</th>
+        <th >Amount</th>
+        <th >Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor=" let company of company"> 
+        <td>{{company.companyId}}</td>
+        <td>{{company.companyName}}</td>
+        <td>{{company.creditvalue}}</td>
+        <td>{{company.companyvalue}}</td>
+        <td>{{company.turnover}}</td>
+        <td>{{company.loan_amount}}</td>
+        <td>{{company.status}}</td>
+      </tr>
+    </tbody>
+  </table>
